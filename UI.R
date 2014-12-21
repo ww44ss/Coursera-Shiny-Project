@@ -5,20 +5,25 @@
 
 library(shiny)
 
-shinyUI(
-        pageWithSidebar(
-                # Application title
-                headerPanel("Crime Mapping"),
-                sidebarPanel(
-                        numericInput('glucose', 'Glucose mg/dl', 90, min = 50, max = 200, step = 5),
-                        submitButton('Submit')
-                ),
-                mainPanel(
-                        h3('Results of prediction'),
-                        h4('You entered'),
-                        verbatimTextOutput("inputValue"),
-                        h4('Which resulted in a prediction of '),
-                        verbatimTextOutput("prediction")
-                )
+shinyUI(pageWithSidebar(
+        headerPanel("Things"),
+        sidebarPanel(
+                
+                checkboxGroupInput("id2", "Checkbox",
+                                   c("Theft" = "Theft",
+                                     "Vehicle" = "Vehicle",
+                                     "Assault" = "Assault")),
+                #dateInput("date", "Date:"),
+                submitButton('Submit')
+        ),
+        mainPanel(
+                h1('Crime Maps'),
+                h3('Data for 2014'),
+                h4('You entered'),
+                verbatimTextOutput("oid2"),
+                
+                
+                plotOutput('newHist')
         )
-)
+))
+
