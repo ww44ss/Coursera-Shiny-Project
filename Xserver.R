@@ -2,7 +2,6 @@
 library(shiny)
 
 
-
 datafile = "SFPD_Incidents_-_Current_Year__2014_.csv"
 data <- read.csv(datafile)
 
@@ -50,11 +49,11 @@ require(mapproj)
         X<-c(-122.4, -122.411)
         Y<-c(37.79,37.81)
 
-        tt<-cbind(X,Y)
+        ttt<-cbind(X,Y)
+        ttt<-as.data.frame(ttt)
 
-        tt<-as.data.frame(tt)
-
-        map2<-map1 + geom_point(aes(x = tt$X, y = tt$Y), data=tt, alpha = 1, color="red", size = 4)
+        tttp<-ggplot(ttt, aes(ttt$X,ttt$Y))+geom_point()
+        #map2<-map1 + geom_point(aes(x = tt$X, y = tt$Y), data=tt, alpha = 1, color="red", size = 4)
 
         #map2<-map1 + geom_point(aes(x = PlotTheft$X, y = PlotTheft$Y), data = PlotTheft, alpha = .1, color="red", size = 3)
         #map3<-map1 + geom_point(aes(x = PlotAssault$X, y = PlotAssault$Y), data = PlotAssault, alpha = .1, color="blue", size = 3)
@@ -82,6 +81,6 @@ shinyServer(
                 #map2<-hist(rnorm(100))
 
                 output$newHist <- renderPlot({print(map1)})
-                output$newHist2 <- renderPlot({print(map2)})
+                output$newHist2 <- renderPlot({print(tttp)})
         }
 )
