@@ -7,8 +7,11 @@ Project for Data Products class on Coursera
 This is the project for the Coursera Class on Data Products.
 
 ##What it does
-Analyzes Crime data for San Francisco. 
+This is a very simple program which just barely demonstrates the capability of shiny.
+Sadly it is much more modest than I had planned, but just ran out of time to debug...
 
-You tell it what district you are going to and it provides a risk prediction based on time of day and location. 
+##What you need
+Almost nothing.
+It loads mtcars and does a very simple modeling and analysis. 
 
 
