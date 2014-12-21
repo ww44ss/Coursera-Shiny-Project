@@ -8,7 +8,7 @@ library(shiny)
 shinyUI(pageWithSidebar(
         headerPanel("Things"),
         sidebarPanel(
-                
+                #h3('Type of Crime'),
                 checkboxGroupInput("id2", "Checkbox",
                                    c("Theft" = "Theft",
                                      "Vehicle" = "Vehicle",
@@ -17,13 +17,13 @@ shinyUI(pageWithSidebar(
                 submitButton('Submit')
         ),
         mainPanel(
-                h1('Crime Maps'),
                 h3('Data for 2014'),
                 h4('You entered'),
                 verbatimTextOutput("oid2"),
                 
                 
-                plotOutput('newHist')
+                plotOutput('newHist'),
+                plotOutput('newHist2')
         )
 ))
 
