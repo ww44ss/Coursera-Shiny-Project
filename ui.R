@@ -9,7 +9,7 @@ shinyUI(pageWithSidebar(
                 
         ),
         
-       ##main panel text and graphs
+       ##main panel text and graphs 
         
         mainPanel(
                 p('This is a comparison of the histograms and MSE for mtcars data'),
